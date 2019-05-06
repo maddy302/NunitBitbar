@@ -28,6 +28,14 @@ steps:
 
 - task: CmdLine@2
   inputs:
+    script: '/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild **/*UITest/*.csproj'
+
+- task: CmdLine@2
+  inputs:
+    script: 'cp **/*UITest/bin/Debug/* $(build.artifactStagingDirectory)/tests'   
+
+- task: CmdLine@2
+  inputs:
     script: 'cp -r $(outputDirectory) $(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
