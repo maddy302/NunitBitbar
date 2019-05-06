@@ -28,7 +28,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'pwd && ls -R && /Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild **/*UITest/*.csproj'
+    script: 'pwd && ls -R && /Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild *.UITest/*UITest.csproj'
 
 - task: CmdLine@2
   inputs:
