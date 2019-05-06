@@ -28,11 +28,11 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'pwd && ls -R && /Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild *.UITest/*UITest.csproj'
+    script: '/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild *.UITest/*UITest.csproj'
 
 - task: CmdLine@2
   inputs:
-    script: 'cp **/*UITest/bin/Debug/* $(build.artifactStagingDirectory)/tests'   
+    script: 'cp *.UITest/bin/Debug/* $(build.artifactStagingDirectory)/tests'   
 
 - task: CmdLine@2
   inputs:
