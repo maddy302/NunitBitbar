@@ -26,4 +26,8 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
+- task: CmdLine@2
+  inputs:
+    script: 'cp -r $(outputDirectory) $(build.artifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
