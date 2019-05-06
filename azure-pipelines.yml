@@ -20,15 +20,15 @@ steps:
   inputs:
     restoreSolution: '**/*.sln'
 
-- task: XamarinAndroid@1
-  inputs:
-    projectFile: '**/*Droid*.csproj'
-    outputDirectory: '$(outputDirectory)'
-    configuration: '$(buildConfiguration)'
+# - task: XamarinAndroid@1
+#   inputs:
+#     projectFile: '**/*Droid*.csproj'
+#     outputDirectory: '$(outputDirectory)'
+#     configuration: '$(buildConfiguration)'
 
 - task: CmdLine@2
   inputs:
-    script: '/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild **/*UITest/*.csproj'
+    script: 'pwd && ls -R && /Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild **/*UITest/*.csproj'
 
 - task: CmdLine@2
   inputs:
