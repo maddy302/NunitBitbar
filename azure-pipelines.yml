@@ -32,7 +32,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'cp -R -v *.UITest/bin/Debug/* $(build.artifactStagingDirectory)/tests'   
+    script: 'mkdir tests && cp -R -v *.UITest/bin/Debug/* $(build.artifactStagingDirectory)/tests'   
 
 - task: CmdLine@2
   inputs:
