@@ -20,11 +20,11 @@ steps:
   inputs:
     restoreSolution: '**/*.sln'
 
-# - task: XamarinAndroid@1
-#   inputs:
-#     projectFile: '**/*Droid*.csproj'
-#     outputDirectory: '$(outputDirectory)'
-#     configuration: '$(buildConfiguration)'
+- task: XamarinAndroid@1
+  inputs:
+    projectFile: '**/*Droid*.csproj'
+    outputDirectory: '$(outputDirectory)'
+    configuration: '$(buildConfiguration)'
 
 - task: CmdLine@2
   inputs:
