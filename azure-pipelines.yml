@@ -38,4 +38,8 @@ steps:
   inputs:
     script: 'cp -r $(outputDirectory) $(build.artifactStagingDirectory)'
 
+- task: CmdLine@2
+  inputs:
+    script: 'cp -r dependencies/* $(build.artifactStagingDirectory)/tests'
+
 - task: PublishBuildArtifacts@1
