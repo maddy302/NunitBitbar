@@ -25,6 +25,17 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
+- task: XamariniOS@2
+  inputs:
+    solutionFile: '*.sln'
+    configuration: 'Release'
+    packageApp: true
+    runNugetRestore: false
+
+- task: CmdLine@2
+  inputs:
+    script: 'cd iOS/bin && ls -R'
+
 - task: CmdLine@2
   inputs:
     script: '/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild *.UITest/*UITest.csproj'
